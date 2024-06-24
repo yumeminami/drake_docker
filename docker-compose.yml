@@ -1,0 +1,13 @@
+services:
+  drake:
+    image: www.lejuhub.com:5000/carloswongleju/drake:1.9.0.9
+    container_name: drake
+    privileged: true
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /home/rongman/workspace/catkin_ws:/home/rongman/workspace/catkin_ws
+      - /home/rongman/workspace/kuavo:/home/rongman/workspace/kuavo
+    network_mode: host
+    command: drake-visualizer 
